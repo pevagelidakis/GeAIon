@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
 /* ═══════════════════════════════════════════════════════════════
-   GAIA — GEOSPATIAL AI INTELLIGENCE ASSISTANT
+   GeAIon — GEOSPATIAL AI INTELLIGENCE ASSISTANT
    Full-spectrum Earth Observation + Medium Range Weather Platform
    Data: Sentinel-1/2, Landsat, MODIS, ECMWF IFS, GFS, SAR
    Use cases: Research · Forecasting · Climate Monitoring · Disaster Response
@@ -53,7 +53,7 @@ const GLOBAL_CSS = `
 `;
 
 // ── System Prompt ────────────────────────────────────────────
-const SYSTEM_PROMPT = `You are GAIA (Geospatial AI Intelligence Assistant), an expert operational AI system for Earth Observation and Medium Range Weather Forecasting.
+const SYSTEM_PROMPT = `You are GeAIon (Geospatial AI Intelligence Assistant), an expert operational AI system for Earth Observation and Medium Range Weather Forecasting.
 
 CAPABILITIES:
 1. DATASET QUERY — Search and retrieve from Sentinel-1 SAR, Sentinel-2 Optical, Landsat-8/9, MODIS Terra/Aqua, in-situ networks
@@ -186,7 +186,7 @@ function Header({ activeView, setActiveView, alertCount }) {
         </div>
         <div>
           <div style={{ fontFamily:"var(--font-display)", fontSize:15, fontWeight:800,
-            letterSpacing:3, color:"var(--sky)" }}>GAIA</div>
+            letterSpacing:3, color:"var(--sky)" }}>GeAIon</div>
           <div style={{ fontFamily:"var(--font-mono)", fontSize:8, color:"var(--text2)",
             letterSpacing:2 }}>GEO·AI·INTELLIGENCE</div>
         </div>
@@ -397,7 +397,7 @@ function CommandView({ messages, loading, input, setInput, onSend, activeTools }
           onBlur={e=>e.currentTarget.style.borderColor="rgba(56,189,248,0.2)"}>
           <textarea value={input} onChange={e=>setInput(e.target.value)}
             onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();onSend();}}}
-            placeholder="Ask GAIA — query EO datasets, interpret forecasts, detect anomalies, generate reports..."
+            placeholder="Ask GeAIon — query EO datasets, interpret forecasts, detect anomalies, generate reports..."
             rows={2} style={{ flex:1, background:"transparent", border:"none", resize:"none",
               color:"var(--text0)", fontSize:13, lineHeight:1.65,
               fontFamily:"var(--font-body)" }} />
@@ -552,7 +552,7 @@ function ForecastView() {
         <div style={{ fontSize:20, flexShrink:0 }}>🤖</div>
         <div>
           <div style={{ fontFamily:"var(--font-display)", fontSize:11, fontWeight:800,
-            color:"#34d399", letterSpacing:1, marginBottom:6 }}>GAIA FORECAST INTERPRETATION</div>
+            color:"#34d399", letterSpacing:1, marginBottom:6 }}>GeAIon FORECAST INTERPRETATION</div>
           <div style={{ fontFamily:"var(--font-body)", fontSize:12, color:"var(--text1)",
             lineHeight:1.7 }}>
             Model ensemble shows <strong style={{color:"var(--text0)"}}>high deterministic skill (ACC &gt;0.9)</strong> through T+72h.
@@ -893,7 +893,7 @@ export default function App() {
   const [view, setView] = useState("COMMAND");
   const [messages, setMessages] = useState([{
     role:"assistant",
-    content:`GAIA online and fully operational.\n\nI'm your Geospatial AI Intelligence Assistant, configured for:\n• 🛰️  Satellite EO: Sentinel-1 SAR, Sentinel-2, Landsat-9, MODIS\n• 🌦️  NWP Models: ECMWF IFS (det + 51-member ensemble), NOAA GFS\n• 🔍  Use cases: Research · Operational Forecasting · Climate Monitoring · Disaster Response\n\nAll agent capabilities are available. Toggle tools in the sidebar to prime specific workflows, or ask me anything directly.\n\nWhat would you like to analyze?`,
+    content:`GeAIon online and fully operational.\n\nI'm your Geospatial AI Intelligence Assistant, configured for:\n• 🛰️  Satellite EO: Sentinel-1 SAR, Sentinel-2, Landsat-9, MODIS\n• 🌦️  NWP Models: ECMWF IFS (det + 51-member ensemble), NOAA GFS\n• 🔍  Use cases: Research · Operational Forecasting · Climate Monitoring · Disaster Response\n\nAll agent capabilities are available. Toggle tools in the sidebar to prime specific workflows, or ask me anything directly.\n\nWhat would you like to analyze?`,
     tools:[], ts:ts(),
   }]);
   const [input, setInput] = useState("");
